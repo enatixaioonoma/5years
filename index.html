@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Για σένα ❤️</title>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background: url('IMG_2760.jpeg') no-repeat center center/cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-family: Arial;
+      text-align: center;
+    }
+
+    #text {
+      font-size: 30px;
+      background: rgba(0,0,0,0.5);
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 18px;
+      border: none;
+      border-radius: 10px;
+      background-color: pink;
+    }
+  </style>
+</head>
+
+<body>
+
+<div>
+  <div id="text"></div>
+  <br>
+  <button onclick="playMusic()">Πάτα εδώ ❤️</button>
+</div>
+
+<audio id="music" loop>
+  <source src="Bruno Mars - Cha Cha Cha [Official Audio].mp3" type="audio/mpeg">
+</audio>
+
+<script>
+  const message = "Κάθε μέρα που περνάει σε αγαπάω περισσότερο, 5 χρόνια και συνεχίζω να θέλω να περάσω μαζί σου όλα τα υπόλοιπα.Σε ευχαριστώ που είσαι στην ζωή μου, είσαι ότι καλύτερο μου έχει συμβεί.❤️";
+  let i = 0;
+
+  function typeWriter() {
+    if (i < message.length) {
+      document.getElementById("text").innerHTML += message.charAt(i);
+      i++;
+      setTimeout(typeWriter, 70);
+    }
+  }
+
+  function playMusic() {
+    document.getElementById("music").play();
+  }
+
+  typeWriter();
+</script>
+
+</body>
+</html>
